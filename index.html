@@ -8,9 +8,10 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <h1>Generate a random password</h1>
-    <p>Never use an insecure password again.</p>
+    <h1 class="title">Generate a <span class="accent--text">random password</span></h1>
+    <p class="subtitle">Never use an insecure password again.</p>
 
+    <!----
     <section class="controls">
     <label for="password-length">Length: (8-20)</label>
     <div class="password-control">
@@ -19,12 +20,14 @@
         <button>-</button>
 
     </div>
-    <button>Generate password</button>
-
+    
     </section>  
+    --->
 
-    <section class="password-list">
-        <ul>
+    <button id="generate-btn">Generate password</button>
+
+    <section class="passwords">
+        <ul class="password-list" id="password-list">
             <li><button>9sd8fgjHDgyjhxc</button></li>
             <li><button>9sd8fgjHDgyjhxc</button></li>
             <li><button>9sd8fgjHDgyjhxc</button></li>
