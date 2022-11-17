@@ -11,27 +11,26 @@
     <h1 class="title">Generate a <span class="accent--text">random password</span></h1>
     <p class="subtitle">Never use an insecure password again.</p>
 
-    <!----
+
     <section class="controls">
     <label for="password-length">Length: (8-20)</label>
     <div class="password-control">
-        <button>+</button>
-        <input type="number" id="password-length" min="8" max="100">
-        <button>-</button>
+        <button id="increment-btn">+</button>
+        <input type="number" id="password-length" min="8" max="20" value="15">
+        <button id="decrement-btn">-</button>
 
     </div>
     
     </section>  
-    --->
 
     <button id="generate-btn">Generate password</button>
 
     <section class="passwords">
         <ul class="password-list" id="password-list">
-            <li><button>9sd8fgjHDgyjhxc</button></li>
-            <li><button>9sd8fgjHDgyjhxc</button></li>
-            <li><button>9sd8fgjHDgyjhxc</button></li>
-            <li><button>9sd8fgjHDgyjhxc</button></li>
+            <li><button class="password">9sd8fgjHDgyjhxc</button></li>
+            <li><button class="password">9sd8fgjHDgyjhxc</button></li>
+            <li><button class="password">9sd8fgjHDgyjhxc</button></li>
+            <li><button class="password">9sd8fgjHDgyjhxc</button></li>
         </ul>
     </section>
 
