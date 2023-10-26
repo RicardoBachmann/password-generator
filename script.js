@@ -94,9 +94,21 @@ const characters = [
 
 let randomPasswordEl = document.getElementById("random-password");
 
+let passwordCharacters = 15;
+
 function getRandomCharacters() {
   let randomIndex = Math.floor(Math.random() * characters.length);
-  console.log(randomIndex);
+  return characters[randomIndex];
 }
 
-getRandomPassword();
+function generateRandomPassword() {
+  let randomPassword = "";
+  for (let i = 0; i < passwordCharacters; i++) {
+    randomPassword += getRandomCharacters();
+  }
+  return randomPassword;
+}
+
+const generateRandomPasswordOne = generateRandomPassword();
+
+console.log("Your password is" + generateRandomPasswordOne);
