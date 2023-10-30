@@ -92,6 +92,7 @@ const characters = [
   "/",
 ];
 
+
 const passwordCharacters = 15;
 
 function generateRandomPassword() {
@@ -107,3 +108,5 @@ function generateRandomPassword() {
 const generateRandomPasswordOne = generateRandomPassword();
 
 console.log("Your password is " + generateRandomPasswordOne);
+
+

@@ -46,3 +46,7 @@ li {
   justify-content: center;
   align-items: center;
 }
+
+.password--generate-btn {
+  cursor: pointer;
+}
