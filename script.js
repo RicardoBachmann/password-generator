@@ -92,10 +92,13 @@ const characters = [
   "/",
 ];
 
-let passwordOneEl = document.getElementById("password-one");
-let passwordTwoEl = document.getElementById("password-two");
-let passwordThreeEl = document.getElementById("password-three");
-let passwordFourEl = document.getElementById("password-four");
+const passwordOneEl = document.getElementById("password-one");
+const passwordTwoEl = document.getElementById("password-two");
+const passwordThreeEl = document.getElementById("password-three");
+const passwordFourEl = document.getElementById("password-four");
+
+const slider = document.getElementById("slider");
+let sliderNumber = document.getElementById("slider-number");
 
 let passwordCharacters = 15;
 
@@ -116,3 +119,12 @@ function renderPassword() {
 }
 
 renderPassword();
+
+slider.addEventListener("input", function () {
+  sliderNumber.textContent = `${slider.value}`;
+  passwordCharacters = slider.value;
+});
+
+function rangeSlide(value) {
+  sliderNumber.innerHTML = value;
+}
