@@ -92,23 +92,27 @@ const characters = [
   "/",
 ];
 
-let randomPasswordEl = document.getElementById("random-password");
+let passwordOneEl = document.getElementById("password-one");
+let passwordTwoEl = document.getElementById("password-two");
+let passwordThreeEl = document.getElementById("password-three");
+let passwordFourEl = document.getElementById("password-four");
 
 let passwordCharacters = 15;
-
-function getRandomCharacters() {
-  let randomIndex = Math.floor(Math.random() * characters.length);
-  return characters[randomIndex];
-}
 
 function generateRandomPassword() {
   let randomPassword = "";
   for (let i = 0; i < passwordCharacters; i++) {
-    randomPassword += getRandomCharacters();
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomPassword += characters[randomIndex];
   }
   return randomPassword;
 }
 
-const generateRandomPasswordOne = generateRandomPassword();
+function renderPassword() {
+  passwordOneEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
+  passwordTwoEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
+  passwordThreeEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
+  passwordFourEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
+}
 
-console.log("Your password is" + generateRandomPasswordOne);
+renderPassword();
