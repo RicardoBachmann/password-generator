@@ -106,4 +106,4 @@ function generateRandomPassword() {
 
 const generateRandomPasswordOne = generateRandomPassword();
 
-console.log("Your password is: " + generateRandomPasswordOne);
+console.log("Your password is " + generateRandomPasswordOne);
