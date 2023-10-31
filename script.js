@@ -92,6 +92,7 @@ const characters = [
   "/",
 ];
 
+<<<<<<< HEAD
 const passwordOneEl = document.getElementById("password-one");
 const passwordTwoEl = document.getElementById("password-two");
 const passwordThreeEl = document.getElementById("password-three");
@@ -101,11 +102,20 @@ const slider = document.getElementById("slider");
 let sliderNumber = document.getElementById("slider-number");
 
 let passwordCharacters = 15;
+=======
+
+const passwordCharacters = 15;
+>>>>>>> origin/main
 
 function generateRandomPassword() {
   let randomPassword = "";
+
   for (let i = 0; i < passwordCharacters; i++) {
+<<<<<<< HEAD
     const randomIndex = Math.floor(Math.random() * characters.length);
+=======
+    let randomIndex = Math.floor(Math.random() * characters.length);
+>>>>>>> origin/main
     randomPassword += characters[randomIndex];
   }
   return randomPassword;
@@ -118,6 +128,7 @@ function renderPassword() {
   passwordFourEl.innerHTML = `<input type="button" id="4" value="${generateRandomPassword()}" onclick="copyToClipboard(4)">`;
 }
 
+<<<<<<< HEAD
 renderPassword();
 
 slider.addEventListener("input", function () {
@@ -135,3 +146,8 @@ function copyToClipboard(index) {
     alert("Copied password successfully!");
   });
 }
+=======
+console.log("Your password is " + generateRandomPasswordOne);
+
+
+>>>>>>> origin/main
