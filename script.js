@@ -92,6 +92,7 @@ const characters = [
   "/",
 ];
 
+
 const passwordOneEl = document.getElementById("password-one");
 const passwordTwoEl = document.getElementById("password-two");
 const passwordThreeEl = document.getElementById("password-three");
@@ -100,10 +101,12 @@ const passwordFourEl = document.getElementById("password-four");
 const slider = document.getElementById("slider");
 let sliderNumber = document.getElementById("slider-number");
 
-let passwordCharacters = 15;
+const passwordCharacters = 15;
+
 
 function generateRandomPassword() {
   let randomPassword = "";
+
   for (let i = 0; i < passwordCharacters; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     randomPassword += characters[randomIndex];
@@ -134,4 +137,3 @@ function copyToClipboard(index) {
   navigator.clipboard.writeText(copyPassword).then(() => {
     alert("Copied password successfully!");
   });
-}
