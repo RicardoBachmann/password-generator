@@ -4,33 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,400;1,300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Password Generator</title>
   </head>
   <body>
     <header>
-      <h1>Generate a random password</h1>
-      <p>Never use an insecure password again.</p>
+      <h1>Generate a random password.</h1>
+      <p>Never use an insecure password again!</p>
+      <label for="slider" id="slider-number" class="slider-name"></label>
+      <input type="range" value="8" min="8" max="25" class="slider" id="slider" name="slider"
+      onmouseover="rangeSlide(this.value)"
+      ></Input>
     </header>
-
-    <section class="password-container">
-      <div class="password--generate">
-        <button
-          onclick="generateRandomPassword()"
-          class="password--generate-btn"
-        >
-          Generate password
-        </button>
-      </div>
-      <section class="password-list">
-        <ul>
-          <li><button id="random-password">9sd8fgjHDgyjhxc</button></li>
-          <li><button id="random-password">9sd8fgjHDgyjhxc</button></li>
-          <li><button id="random-password">9sd8fgjHDgyjhxc</button></li>
-          <li><button id="random-password">9sd8fgjHDgyjhxc</button></li>
-        </ul>
+    <main>
+      <section class="password-container">
+        <div class="password--generate">
+          <button onclick="renderPassword()" class="password--generate-btn">
+            Generate password
+          </button>
+        </div>
+        <section class="password-list">
+          <ul>
+            <li id="password-one"></li>
+            <li id="password-two"></li>
+            <li id="password-three"></li>
+            <li id="password-four"></li>
+          </ul>
+        </section>
       </section>
-    </section>
+    </main>
+
 
     <script src="script.js"></script>
   </body>

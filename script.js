@@ -93,20 +93,47 @@ const characters = [
 ];
 
 
+const passwordOneEl = document.getElementById("password-one");
+const passwordTwoEl = document.getElementById("password-two");
+const passwordThreeEl = document.getElementById("password-three");
+const passwordFourEl = document.getElementById("password-four");
+
+const slider = document.getElementById("slider");
+let sliderNumber = document.getElementById("slider-number");
+
 const passwordCharacters = 15;
+
 
 function generateRandomPassword() {
   let randomPassword = "";
 
   for (let i = 0; i < passwordCharacters; i++) {
-    let randomIndex = Math.floor(Math.random() * characters.length);
+    const randomIndex = Math.floor(Math.random() * characters.length);
     randomPassword += characters[randomIndex];
   }
   return randomPassword;
 }
 
-const generateRandomPasswordOne = generateRandomPassword();
+function renderPassword() {
+  passwordOneEl.innerHTML = `<input type="button" id="1" value="${generateRandomPassword()}" onclick="copyToClipboard(1)">`;
+  passwordTwoEl.innerHTML = `<input type="button" id="2" value="${generateRandomPassword()}" onclick="copyToClipboard(2)">`;
+  passwordThreeEl.innerHTML = `<input type="button" id="3" value="${generateRandomPassword()}" onclick="copyToClipboard(3)">`;
+  passwordFourEl.innerHTML = `<input type="button" id="4" value="${generateRandomPassword()}" onclick="copyToClipboard(4)">`;
+}
 
-console.log("Your password is " + generateRandomPasswordOne);
+renderPassword();
 
+slider.addEventListener("input", function () {
+  sliderNumber.textContent = `${slider.value}`;
+  passwordCharacters = slider.value;
+});
 
+function rangeSlide(value) {
+  sliderNumber.innerHTML = value;
+}
+
+function copyToClipboard(index) {
+  const copyPassword = document.getElementById(index).value;
+  navigator.clipboard.writeText(copyPassword).then(() => {
+    alert("Copied password successfully!");
+  });
