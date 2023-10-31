@@ -112,10 +112,10 @@ function generateRandomPassword() {
 }
 
 function renderPassword() {
-  passwordOneEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
-  passwordTwoEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
-  passwordThreeEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
-  passwordFourEl.innerHTML = `<input type="button" value="${generateRandomPassword()}">`;
+  passwordOneEl.innerHTML = `<input type="button" id="1" value="${generateRandomPassword()}" onclick="copyToClipboard(1)">`;
+  passwordTwoEl.innerHTML = `<input type="button" id="2" value="${generateRandomPassword()}" onclick="copyToClipboard(2)">`;
+  passwordThreeEl.innerHTML = `<input type="button" id="3" value="${generateRandomPassword()}" onclick="copyToClipboard(3)">`;
+  passwordFourEl.innerHTML = `<input type="button" id="4" value="${generateRandomPassword()}" onclick="copyToClipboard(4)">`;
 }
 
 renderPassword();
@@ -127,4 +127,11 @@ slider.addEventListener("input", function () {
 
 function rangeSlide(value) {
   sliderNumber.innerHTML = value;
+}
+
+function copyToClipboard(index) {
+  const copyPassword = document.getElementById(index).value;
+  navigator.clipboard.writeText(copyPassword).then(() => {
+    alert("Copied password successfully!");
+  });
 }
